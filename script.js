@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const gridSizeButton = document.querySelector('.grid-size');
 
   gridSizeButton.addEventListener('click', function() {
-      const size = prompt('Enter the grid size (e.g., 16 for a 16x16 grid):'); // Asks user for the proper amount.
-      if (size !== null && !isNaN(size) && size > 0 && size <= 100) { // Ensures user puts in proper input
+      const size = prompt('Enter the grid size (e.g., 50 for a 50x50 grid):'); // Asks user for the proper amount.
+      if (size !== null && !isNaN(size) && size >= 16 && size <= 100) { // Ensures user puts in proper input
           createGrid(size);
       } else {
-          alert('Please enter a number between 1 and 100.'); // Message if input doesn't work
+          alert('Please enter a number between 16 and 100.'); // Message if input doesn't work
       }
   });
 
