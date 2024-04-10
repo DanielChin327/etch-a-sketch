@@ -16,11 +16,12 @@
   <h6>Grid Size</h6>
   <button id="pop-up" class ="btn btn-success">Select</button>
 </div>
+  <p id="message"></p>
   <div class="board"></div>
   <div class="footer">
-    <button class="btn btn-secondary">Black</button>
-    <button class="btn btn-info">Random</button>
-    <button class="btn btn-light">Clear</button>
+    <button class="btn btn-secondary" onclick="setChoice('black')">Black</button>
+    <button class="btn btn-info" onclick="setColor('random')">Random</button>
+    <button class="btn btn-light" onclick="resetBoard()">Clear</button>
   </div>
 
     <script src="script.js"></script>
