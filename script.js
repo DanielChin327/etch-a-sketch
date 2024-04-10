@@ -1,8 +1,22 @@
 // DOMContentLoaded waits for HTML to load first so that JS doesn't break.
 let color = "black";
+let click = "false";
 
 document.addEventListener("DOMContentLoaded", function(){
   createBoard(32);
+
+  document.querySelector("body").addEventListener("click", function(e){
+    if (e.target.tagName != "BUTTON"){
+      click = !click;
+      let draw = document.querySelector("#draw");
+      if(click) {
+        draw.innerHTML = "Draw Toggle: On"
+      }
+      else{
+        draw.innerHTML = "Draw Toggle: Off"
+      }
+    }
+  })
   let btnPopUp = document.querySelector("#pop-up");
   btnPopUp.addEventListener("click", function(){
     let size = getSize();
@@ -40,11 +54,13 @@ function getSize(){
 }
 
 function colorDiv(){
-  if(color == "random"){
-    this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`
-  }
-  else{
-    this.style.backgroundColor = 'black';
+  if(click) {
+    if(color == "random"){
+      this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`
+    }
+    else{
+      this.style.backgroundColor = 'black';
+    }
   }
 }
 
