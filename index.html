@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sketchpad</title>
+    <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tilt+Neon:XROT@-4&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <header class="header">
-        <h3>Etch-A-Sketch</h3>
-        <div class="operating-buttons">
-        <button class="grid-on button">Grid</button>
-        <button class="grid-size button">Set Grid Size</button>
-        <button class="reset button">Clear</button>
-        </div>
-    </header>
-
-    <main>
-        <div class="grid-container">
-
-
-        </div>
-    </main>
-
+<h1>Etch-A-Sketch</h1>
+<div class="header">
+  <h6>Grid Size</h6>
+  <button id="pop-up" class ="btn btn-success">Select</button>
+</div>
+  <div class="board"></div>
+  <div class="footer">
+    <button class="btn btn-secondary">Black</button>
+    <button class="btn btn-info">Random</button>
+    <button class="btn btn-light">Clear</button>
+  </div>
 
     <script src="script.js"></script>
 </body>

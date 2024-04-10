@@ -1,26 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const gridSizeButton = document.querySelector('.grid-size');
+// DOMContentLoaded waits for HTML to load first so that JS doesn't break.
 
-  gridSizeButton.addEventListener('click', function() {
-      const size = prompt('Enter the grid size (e.g., 50 for a 50x50 grid):'); // Asks user for the proper amount.
-      if (size !== null && !isNaN(size) && size >= 16 && size <= 100) { // Ensures user puts in proper input
-          createGrid(size);
-      } else {
-          alert('Please enter a number between 16 and 100.'); // Message if input doesn't work
-      }
-  });
+console.log("HELLEO")
+document.addEventListener("DOMContentLoaded", function(){
 
-  function createGrid(size) {
-      const container = document.querySelector('.grid-container');
-      container.innerHTML = ''; // Clear existing grid
-      container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-      container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  console.log("Hello WORLD")
+})
+function createBoard(size){
+  let board = document.querySelector(".board");
+  board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-      const totalSquares = size * size;
-      for (let i = 0; i < totalSquares; i++) {
-          const square = document.createElement('div');
-          square.classList.add('grid-square');
-          container.appendChild(square);
-      }
+  let numDivs = size * size;
+
+  for(let i = 0; i < numDivs; i++){
+    let div = document.createElement("div");
+    div.style.backgroundColor = "white";
+    board.insertAdjacentElement("beforeend", div);
   }
-});
+};
